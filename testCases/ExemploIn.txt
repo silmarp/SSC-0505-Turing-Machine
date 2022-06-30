@@ -1,0 +1,21 @@
+3               # estados
+2 a b           # sinbolos terminais
+1 2 3		# estados finais
+6               # transições
+0 a 1
+0 b 1
+1 a 1
+1 b 2
+2 a 0
+2 b 2
+10              # testes 
+abbbba          # r
+aabbbb		# a
+bbabbabbabbb	# a
+bbbbbbbbbbb	# a
+-		# r
+abababababab
+bbbbaabbbb
+abba
+a
+aaa
