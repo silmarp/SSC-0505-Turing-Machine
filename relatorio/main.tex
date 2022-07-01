@@ -1,0 +1,95 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[portuges]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{multicol,lipsum}
+\usepackage{hyperref}
+
+\begin{document}
+%\maketitle
+
+\begin{titlepage}
+	\begin{center}
+	
+	%\begin{figure}[!ht]
+	%\centering
+	%\includegraphics[width=2cm]{c:/ufba.jpg}
+	%\end{figure}
+
+		\Huge{Instituto de Ciências Matemáticas e de Computação}\\
+		\large{SCC0505 - Introdução a teoria da Computação}\\ 
+		\vspace{15pt}
+        \vspace{95pt}
+        \textbf{\LARGE{Trabalho 02 - Maquina de Turing}}\\
+		%\title{{\large{Título}}}
+		\vspace{3,5cm}
+	\end{center}
+	
+	\begin{flushleft}
+		\begin{tabbing}
+			Alunos: Érika, Mauricio , Helena , Roberto , Silmar\\
+            Nusps: 10696830, 10295346, 11200272, 12690712, 12623950 \\
+			Professor: João Luiz G. Rosa\\
+			%Professor co-orientador: \\
+	\end{tabbing}
+ \end{flushleft}
+	\vspace{1cm}
+	
+	\begin{center}
+		\vspace{\fill}
+			 Julho\\
+		 2022
+			\end{center}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+% % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Introdução}
+
+A maquina de Turing (MT) é um modelo matemático de um computador, idealizado por Alan Turing no ano de 1936 a maquina manipula símbolos presentes numa fita seguindo um conjunto de regras.\\
+A maquina consiste numa fita dividida em setores nos quais dados podem ser lidos, guardados e escritos. Uma cabeça, que aponta para um setor da fita com capacidade de realizar operações de leitura e escrita além de movimentação (para a direita ou esquerda). Por fim há também uma máquina de estados com as instruções que a Máquina de Turing consegue realizar.\\
+Neste projeto foi implementado um programa, na linguagem de programação python, capaz de simular uma MT e realizar algoritmos baseados nos componentes discutidos nos parágrafos anteriores.\\
+
+\newpage
+\section{Implementação}
+\subsection{Linguagem}
+Para esse projeto foi escolhida a linguagem python, por ser uma linguagem de alto nível que oferece diversas ferramentas que facilitam desenvolvimento, como iteradores, métodos para manipular coleções e garbage collection. Com tais vantagens o processo de desenvolvimento é mais rápido.
+Ademais, outro ponto importante é a linguagem ser multiparadigmas, e possuir amplo suporte para orientação a objetos, como veremos no próximo tópico. Tal característica pertimiu a organzação do código em classes e métodos que facilitam o entendimento do código e seu uso.\\
+
+\subsection{Paradigma}
+
+Para implementação da Máquina foi usado o paradigma de programação orientada a objetos. Inicialmente, a MT foi separada em 3 classes, Fita, Instrução, e TuringMachine, sendo essa ultima a classe principal que usa as auxiliares e toma conta dos outros componentes citados na introdução, mas que não receberam uma classe própria.\\
+A classe Fita representa a memória da máquina e possui metodos para ler e escrever em um setor, além de um construtor para inicializar a fita usando a estrutura de dados dicionario.
+A classe instrução é uma maneira de abstrair as istruções de cada estado, para tornar mais facíl manipular a máquina, não possui nenhum método, apenas um construtor. As instruções são armazenadas em um dicionário com keys representando os estados, e seu par value sendo um array de instruções que a MT pode realizar a partira daquele estado\\
+Finalmente a classe TuringMachine é quem representa a máquina em sí, possuindo os componentes como seus atributos, e uma série de métodos para ser capaz de processar as cadeias que receber.\\
+
+
+\subsection{Modularização}
+O projeto foi pensado para funcionar como um módulo ou biblioteca, isso significa que apenas possuindo python instalado e os arquivos dentro de models/ qualquer pessoa será capaz de simular uma Máquina de Turing e processar cadeias de caracter, basta importar a classe, instanciar um objeto e usar seus métodos.\\
+Outro ponto importante de se destacar é a maneira com que foram feitos os métodos da classe, tendo um mais abrangente que irá processar toda a cadeia e retornar verdadeiro se for aceita e falso caso contrario. Porém também é possível acessar os métodos mais básicos de processamento das cadeias e realizar o procedimento passo a passo, junto a funções auxiliares como a de escrever no prompt a fita em seu estado atual.\\
+Desta forma, o código fica isolado, pode ser facilmente compartilhado e estendido para adição de novas funcionalidades.\\
+
+\section{Complexidade de espaço e tempo}
+Assim como qualquer algoritmo, o simulador de Máquina de Turing consome memoria e leva tempo para ser computado, sendo esse tempo e espaço consumidos proporcionais ao tamanho da cadeia a ser processado, instruções de transição. Desta forma, numa situação ideal em que as instruções de transição são realizadas em tempo e espaço constantes sem loops na lógica, uma MT teria complexidade de memória e espaço constantes O(n).\\
+Entretando há um porém, é impossível prever quais serão as instruções usadas na máquina e o tamanho da cadeia de caracteres logo, fora do caso ideal o conjunto de instruções pode ter diversas estruturas, tal qual loops, que irão aumentar a complexidade de tempo, e caso passem a consumir memoria além da ocupada pelos caracteres iniciais a complexidade de memória também irá aumentar.
+Desta forma, fora do caso ideal a Maquina de Turing terá complexidade de espaço e memória indefinidos, dependendo do conjunto de instruções de mudanças de estado que forem usados.
+
+
+\newpage
+\section{Conclusões}
+placeholder
+\end{document}
+
+
+
