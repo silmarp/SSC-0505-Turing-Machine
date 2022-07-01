@@ -4,26 +4,18 @@ O trabalho foi desenvolvido utilizando a versão do Python 3.9, recomendamos uti
 - Como executar?
 
 Executando pelo python:
-1. Editar o arquivo test.txt para incluir as entradas desejadas. 
-2. Abrir o cmd, usar o cd para chegar até a pasta src.
-3. Digitar o comando 'python main.py'
-4. Digitar o caminho do arquivo test.txt
+1. Digitar o comando 'python main.py'
+2. Digitar os inputs na ordem correta
 
 Já que python é uma linguagem interpretada, não geraremos um exe.
 
 
 - Onde está o código?
-O arquivo com o código fonte está localizado na pasta "src".
+O arquivo main.py ficara na raiz da pasta, junto ao manual e relatorio.
 
 
-- Como compilar?
+- Como compilar?     #não recomendado, por ser uma linguagem interpretada, mas é possivel gerar um binario compilando
 
 1. Por ser uma linguagem interpretada, precisamos apenas garantir a instalação da biblioteca auto-py-to-exe.
 2. Comando para instalação: pip install auto-py-to-exe.
 3. Depois disso, basta executar o programa.
-
-
-- como realizar os testes:
-1. Abra o terminal aberto na pasta src/
-2. Certifique-se de ter o python instalado ($ python -V)
-3. Execute o comando $ python tests.py
